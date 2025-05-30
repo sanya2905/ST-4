@@ -8,7 +8,7 @@ namespace BugTests
     public class UnitTest1
     {
         [TestMethod]
-        public void Test_Open_To_Assigned()
+        public void Open_To_Assigned()
         {
             var bug = new Bug(Bug.State.Open);
             bug.Assign();
@@ -16,7 +16,7 @@ namespace BugTests
         }
 
         [TestMethod]
-        public void Test_Assigned_To_InProgress()
+        public void Assigned_To_InProgress()
         {
             var bug = new Bug(Bug.State.Assigned);
             bug.StartWork();
@@ -24,7 +24,7 @@ namespace BugTests
         }
 
         [TestMethod]
-        public void Test_InProgress_To_Resolved()
+        public void InProgress_To_Resolved()
         {
             var bug = new Bug(Bug.State.InProgress);
             bug.Resolve();
@@ -32,7 +32,7 @@ namespace BugTests
         }
 
         [TestMethod]
-        public void Test_Resolved_To_Verified()
+        public void Resolved_To_Verified()
         {
             var bug = new Bug(Bug.State.Resolved);
             bug.Verify();
@@ -40,7 +40,7 @@ namespace BugTests
         }
 
         [TestMethod]
-        public void Test_Verified_To_Closed()
+        public void Verified_To_Closed()
         {
             var bug = new Bug(Bug.State.Verified);
             bug.Close();
@@ -48,7 +48,7 @@ namespace BugTests
         }
 
         [TestMethod]
-        public void Test_Verified_To_Reopened()
+        public void Verified_To_Reopened()
         {
             var bug = new Bug(Bug.State.Verified);
             bug.Reopen();
@@ -56,7 +56,7 @@ namespace BugTests
         }
 
         [TestMethod]
-        public void Test_Closed_To_Reopened()
+        public void Closed_To_Reopened()
         {
             var bug = new Bug(Bug.State.Closed);
             bug.Reopen();
@@ -64,7 +64,7 @@ namespace BugTests
         }
 
         [TestMethod]
-        public void Test_Reopened_To_Assigned()
+        public void Reopened_To_Assigned()
         {
             var bug = new Bug(Bug.State.Reopened);
             bug.Assign();
@@ -72,7 +72,7 @@ namespace BugTests
         }
 
         [TestMethod]
-        public void Test_Assigned_Ignore_Assign()
+        public void Assigned_Ignore_Assign()
         {
             var bug = new Bug(Bug.State.Assigned);
             bug.Assign();
@@ -80,7 +80,7 @@ namespace BugTests
         }
 
         [TestMethod]
-        public void Test_Assigned_To_Deferred()
+        public void Assigned_To_Deferred()
         {
             var bug = new Bug(Bug.State.Assigned);
             bug.Defer();
@@ -88,7 +88,7 @@ namespace BugTests
         }
 
         [TestMethod]
-        public void Test_Deferred_To_Assigned()
+        public void Deferred_To_Assigned()
         {
             var bug = new Bug(Bug.State.Deferred);
             bug.Assign();
@@ -96,7 +96,7 @@ namespace BugTests
         }
 
         [TestMethod]
-        public void Test_Open_To_Closed()
+        public void Open_To_Closed()
         {
             var bug = new Bug(Bug.State.Open);
             bug.Close();
@@ -104,7 +104,7 @@ namespace BugTests
         }
 
         [TestMethod]
-        public void Test_Open_To_Rejected()
+        public void Open_To_Rejected()
         {
             var bug = new Bug(Bug.State.Open);
             bug.Reject();
@@ -112,7 +112,7 @@ namespace BugTests
         }
 
         [TestMethod]
-        public void Test_Assigned_To_Rejected()
+        public void Assigned_To_Rejected()
         {
             var bug = new Bug(Bug.State.Assigned);
             bug.Reject();
@@ -120,7 +120,7 @@ namespace BugTests
         }
 
         [TestMethod]
-        public void Test_InProgress_To_Rejected()
+        public void InProgress_To_Rejected()
         {
             var bug = new Bug(Bug.State.InProgress);
             bug.Reject();
@@ -128,7 +128,7 @@ namespace BugTests
         }
 
         [TestMethod]
-        public void Test_Resolved_To_Rejected()
+        public void Resolved_To_Rejected()
         {
             var bug = new Bug(Bug.State.Resolved);
             bug.Reject();
@@ -136,7 +136,7 @@ namespace BugTests
         }
 
         [TestMethod]
-        public void Test_Verified_To_Rejected()
+        public void Verified_To_Rejected()
         {
             var bug = new Bug(Bug.State.Verified);
             bug.Reject();
@@ -144,7 +144,7 @@ namespace BugTests
         }
 
         [TestMethod]
-        public void Test_Rejected_To_Reopened()
+        public void Rejected_To_Reopened()
         {
             var bug = new Bug(Bug.State.Rejected);
             bug.Reopen();
@@ -153,7 +153,7 @@ namespace BugTests
 
         [TestMethod]
         [ExpectedException(typeof(System.InvalidOperationException))]
-        public void Test_Invalid_Transition_Open_Verify()
+        public void Invalid_Transition_Open_Verify()
         {
             var bug = new Bug(Bug.State.Open);
             bug.Verify();
@@ -161,7 +161,7 @@ namespace BugTests
 
         [TestMethod]
         [ExpectedException(typeof(System.InvalidOperationException))]
-        public void Test_Invalid_Transition_Closed_Verify()
+        public void Invalid_Transition_Closed_Verify()
         {
             var bug = new Bug(Bug.State.Closed);
             bug.Verify();
@@ -169,7 +169,7 @@ namespace BugTests
 
         [TestMethod]
         [ExpectedException(typeof(System.InvalidOperationException))]
-        public void Test_Invalid_Transition_Resolved_StartWork()
+        public void Invalid_Transition_Resolved_StartWork()
         {
             var bug = new Bug(Bug.State.Resolved);
             bug.StartWork();

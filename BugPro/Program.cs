@@ -6,29 +6,10 @@ namespace BugPro
     public class Bug
     {
         public enum State
-        {
-            Open,
-            Assigned,
-            Deferred,
-            Closed,
-            Reopened,
-            Resolved,
-            InProgress,
-            Verified,
-            Rejected
-        }
+        {Open,Assigned,Deferred,Closed,Reopened,Resolved,InProgress,Verified,Rejected} 
 
         private enum Trigger
-        {
-            Assign,
-            Defer,
-            Close,
-            Reopen,
-            Resolve,
-            StartWork,
-            Verify,
-            Reject
-        }
+        {Assign,Defer,Close,Reopen,Resolve,StartWork,Verify,Reject}
 
         private StateMachine<State, Trigger> sm;
 
